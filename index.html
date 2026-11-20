@@ -111,6 +111,53 @@ section{padding-block:72px}
 .flow h3{font-size:24px;letter-spacing:-.02em;margin-bottom:8px}
 .flow p{margin:0;color:var(--muted);font-size:15.5px}
 
+/* inbox */
+.inbox{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.3fr);border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg);box-shadow:8px 8px 0 var(--shadow)}
+.ilist{list-style:none;margin:0;padding:10px;border-right:2px solid var(--ink);display:grid;gap:6px;align-content:start}
+.item{width:100%;text-align:left;background:transparent;border:2px solid transparent;border-radius:14px;padding:12px 14px;cursor:pointer;color:var(--ink);font:inherit;display:grid;grid-template-columns:1fr auto;gap:2px 10px;transition:background .15s}
+.item:hover{background:var(--surface)}
+.item[aria-selected="true"]{background:var(--surface);border-color:var(--ink);box-shadow:inset 5px 0 0 var(--brand)}
+.item .from{font:800 16px var(--display);letter-spacing:-.01em}
+.item .when{font-size:13px;color:var(--muted);font-weight:600}
+.item .subj{grid-column:1/-1;font-size:14.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item.done .from::after{content:"Handled";margin-left:8px;font:700 11px var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+.idetail{padding:26px 28px 28px;background:var(--surface);min-width:0}
+.idetail .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.itag{font:800 13px var(--display);padding:4px 12px;border-radius:99px;border:2px solid var(--ink);background:var(--bg)}
+.itag.urgent{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.idetail blockquote{margin:0 0 22px;font:800 clamp(22px,2.6vw,30px)/1.15 var(--display);letter-spacing:-.02em}
+.idetail h3{font-size:20px;margin-bottom:12px}
+.isteps{margin:0 0 20px;padding:0;list-style:none;counter-reset:s;display:grid;gap:10px}
+.isteps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.isteps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;border:2px solid var(--ink);background:var(--hi);color:var(--hi-ink);display:flex;align-items:center;justify-content:center;font:800 13px var(--display)}
+.itools{display:flex;flex-wrap:wrap;gap:7px;align-items:center;color:var(--muted);font-size:14px;font-weight:600}
+.itools span{font-size:14px;font-weight:600;padding:5px 12px;border-radius:99px;background:var(--soft);color:var(--ink)}
+.idetail .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:2px solid var(--line)}
+.idetail .foot small{color:var(--muted);font-size:14px;font-weight:600}
+.ienter{animation:ifade .25s ease-out}
+@keyframes ifade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.inote{margin:16px 0 0;color:var(--muted);font-size:14px}
+
+/* before / after switches */
+.autos{display:grid;gap:28px}
+.auto{border:2px solid var(--ink);border-radius:18px;background:var(--bg);padding:24px;display:grid;gap:16px}
+.auto-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.auto-top h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em}
+.switch{display:inline-flex;border:2px solid var(--ink);border-radius:99px;padding:3px;gap:2px;background:var(--surface)}
+.switch button{border:0;background:transparent;color:var(--ink);font:700 14px var(--text);padding:8px 16px;border-radius:99px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.aflow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.aflow li{border:2px solid var(--ink);border-radius:14px;padding:16px;font-size:15.5px;line-height:1.45;background:var(--surface);transition:background .25s,color .25s}
+.aflow.after li{background:var(--hi);color:var(--hi-ink)}
+.aflow li b{display:block;font:700 12px var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:6px}
+.aflow.after li b{color:var(--hi-ink);opacity:.75}
+.auto .note{margin:0;color:var(--muted);font-size:15.5px;max-width:72ch}
+@media (max-width:900px){
+  .inbox{grid-template-columns:1fr}
+  .ilist{border-right:0;border-bottom:2px solid var(--ink);grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);overflow-x:auto}
+  .aflow{grid-template-columns:1fr}
+}
+
 /* motion */
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes slideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
@@ -246,6 +293,7 @@ footer .hand{font-size:22px;color:var(--hi)}
     <a class="brand" href="#top">Phuong Le<small>admin &amp; ops</small></a>
     <div class="nav-r">
       <ul>
+        <li><a class="l" href="#inbox">Inbox</a></li>
         <li><a class="l" href="#workflows">Workflows</a></li>
         <li><a class="l" href="#experience">Experience</a></li>
         <li><a class="l" href="#story">My story</a></li>
@@ -297,26 +345,43 @@ footer .hand{font-size:22px;color:var(--hi)}
     </div>
   </div></div>
 
-  <section id="workflows" class="band pad">
+  <section id="inbox" class="band pad">
     <div class="wrap">
       <div class="head">
-        <div><span class="eyebrow">What I like doing most</span><h2>I make work <em>smoother.</em></h2></div>
-        <p>Optimizing operations is my favourite part of the job. Here are two changes I made.</p>
+        <div><span class="eyebrow">A day at the front desk</span><h2>Try my <em>inbox.</em></h2></div>
+        <p>These are the kinds of requests I handled every day. Pick one to see how I deal with it.</p>
       </div>
-      <div class="flows">
-        <article class="flow">
-          <div class="ba"><div class="before"><small>Before</small>Matching 52 students by hand every week</div><i>→</i><div class="after"><small>After</small>Pairs and emails sent by a script</div></div>
-          <div class="body"><h3>Buddy-matching automation</h3><p>Wrote a Google Apps Script that assigns weekly buddy pairs and emails each student for a 52-student pilot program.</p></div>
-        </article>
-        <article class="flow">
-          <div class="ba"><div class="before"><small>Before</small>Calls missed after hours</div><i>→</i><div class="after"><small>After</small>24/7 answering and text-back</div></div>
-          <div class="body"><h3>AI receptionist proposal</h3><p>Researched and proposed Ask Benny for 24/7 call answering, missed-call text-back, reminders and calendar integration.</p></div>
-        </article>
+      <div class="inbox">
+        <ul class="ilist" id="ilist" role="tablist" aria-label="Sample requests"></ul>
+        <div class="idetail" id="idetail" role="tabpanel" aria-live="polite"></div>
       </div>
     </div>
   </section>
 
-  <section id="experience" class="pad">
+  <section id="workflows" class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">What I like doing most</span><h2>I make work <em>smoother.</em></h2></div>
+        <p>Optimizing operations is my favourite part of the job. Switch between the old way and the new way.</p>
+      </div>
+      <div class="autos">
+        <div class="auto" data-auto="buddy">
+          <div class="auto-top"><h3>Weekly buddy matching for 52 students</h3>
+            <div class="switch" role="group" aria-label="Show the process"><button type="button" data-v="before" aria-pressed="false">By hand</button><button type="button" data-v="after" aria-pressed="true">With my script</button></div></div>
+          <ol class="aflow after"></ol>
+          <p class="note">I built a Google Apps Script workflow for a 52-student pilot program. Students are paired by timezone, language and gender preferences, and the coaching topic they want to discuss. AI helps with pairs that have special requests, everyone else is matched automatically, and each student gets an email with their buddy.</p>
+        </div>
+        <div class="auto" data-auto="calls">
+          <div class="auto-top"><h3>Calls that came in after hours</h3>
+            <div class="switch" role="group" aria-label="Show the process"><button type="button" data-v="before" aria-pressed="false">Before</button><button type="button" data-v="after" aria-pressed="true">With my proposal</button></div></div>
+          <ol class="aflow after"></ol>
+          <p class="note">I researched and proposed Ask Benny, an AI phone receptionist with 24/7 answering, missed-call text-back, appointment reminders and calendar integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="band pad">
     <div class="wrap">
       <div class="head"><div><span class="eyebrow">Experience</span><h2>Where I worked in <em>Canada</em></h2></div></div>
       <div class="jobs">
@@ -356,7 +421,7 @@ footer .hand{font-size:22px;color:var(--hi)}
     </div>
   </section>
 
-  <section id="skills" class="band pad">
+  <section id="skills" class="pad">
     <div class="wrap">
       <div class="head"><div><span class="eyebrow">Toolbox</span><h2>Skills <em>&amp;</em> tools</h2></div></div>
       <div class="skills">
@@ -370,7 +435,7 @@ footer .hand{font-size:22px;color:var(--hi)}
     </div>
   </section>
 
-  <section id="story" class="pad">
+  <section id="story" class="band pad">
     <div class="wrap">
       <div class="head">
         <div><span class="eyebrow">Why tech, why admin</span><h2>Learning how a business <em>runs.</em></h2></div>
@@ -390,7 +455,7 @@ footer .hand{font-size:22px;color:var(--hi)}
     </div>
   </section>
 
-  <section id="gap-year" class="band pad">
+  <section id="gap-year" class="pad">
     <div class="wrap">
       <div class="head">
         <div><span class="eyebrow">Beyond work · May — September 2026</span><h2>My gap months in <em>Viet Nam</em></h2></div>
@@ -470,6 +535,69 @@ footer .hand{font-size:22px;color:var(--hi)}
       function selectIt(){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Selected'; }
       try{ navigator.clipboard.writeText(text).then(function(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy'},1500); }, selectIt); }catch(e){ selectIt(); }
     });
+  });
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  // inbox
+  var items=[
+    {from:'Client',when:'8:42 am',subj:'Can I move my Thursday session to next week?',type:'Schedule change',pri:'Today',
+     steps:["Check the coach's calendar for open times next week",'Offer the client two options in one reply','Update the booking and the client record in HubSpot','Send a confirmation with the new date and time'],
+     tools:['Google Calendar','HubSpot','Gmail'],time:'About 10 minutes'},
+    {from:'New prospect',when:'9:15 am',subj:'Could you send a quote for 10 coaching seats?',type:'Quotation',pri:'Today',
+     steps:['Confirm what they need: program, dates and number of people','Build the quote from our pricing template','Log the inquiry and quote in HubSpot','Set a reminder to follow up in three days'],
+     tools:['Google Sheets','HubSpot','Gmail'],time:'Same day'},
+    {from:'Team',when:'9:50 am',subj:"The meeting room screen won't connect and we start at 10",type:'Tech support',pri:'Urgent',
+     steps:['Go to the room right away and check cables, input and display settings','Test the laptop connection before people arrive','Set up a backup option if it still fails','Report the issue so it gets fixed properly'],
+     tools:['First-line tech support'],time:'Before 10:00'},
+    {from:'Client',when:'11:05 am',subj:'Has my last invoice been paid?',type:'Billing',pri:'Today',
+     steps:['Look up the invoice and payment status in QuickBooks','Reply with the status and a receipt if it is paid','Update the payment record'],
+     tools:['QuickBooks','Gmail'],time:'About 5 minutes'},
+    {from:'Voicemail',when:'Last night',subj:'Missed call from a new client after hours',type:'New inquiry',pri:'First thing',
+     steps:['Call back at the start of the day','Log the caller and what they need in HubSpot','Route them to the right team member','This is why I proposed an AI receptionist (see below)'],
+     tools:['Phone','HubSpot'],time:'By 9:00'},
+    {from:'Office',when:'2:30 pm',subj:"We're almost out of printer paper and toner",type:'Supplies',pri:'This week',
+     steps:['Check stock in the inventory sheet','Order from our vendor and note the delivery date','Update the inventory sheet when it arrives'],
+     tools:['Google Sheets','Vendor portal'],time:'This week'}
+  ];
+  var ilist=document.getElementById('ilist'), idetail=document.getElementById('idetail'), done={}, sel=0;
+  function renderList(){
+    ilist.innerHTML=items.map(function(it,i){
+      return '<li><button class="item'+(done[i]?' done':'')+'" type="button" role="tab" id="it'+i+'" aria-controls="idetail" aria-selected="'+(i===sel)+'" data-i="'+i+'">'+
+        '<span class="from">'+esc(it.from)+'</span><span class="when">'+esc(it.when)+'</span><span class="subj">'+esc(it.subj)+'</span></button></li>';
+    }).join('');
+  }
+  function renderDetail(){
+    var it=items[sel];
+    idetail.innerHTML='<div class="ienter"><div class="meta"><span class="itag">'+esc(it.type)+'</span><span class="itag'+(it.pri==='Urgent'?' urgent':'')+'">'+esc(it.pri)+'</span></div>'+
+      '<blockquote>“'+esc(it.subj)+'”</blockquote><h3>How I handle it</h3><ol class="isteps">'+
+      it.steps.map(function(s){return '<li><span>'+esc(s)+'</span></li>'}).join('')+'</ol>'+
+      '<div class="itools">Tools: '+it.tools.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>'+
+      '<div class="foot"><small>Done in: '+esc(it.time)+'</small><button class="btn brand" type="button" id="doneBtn">'+(sel<items.length-1?'Mark handled, next':'Mark handled')+'</button></div></div>';
+    idetail.setAttribute('aria-labelledby','it'+sel);
+  }
+  ilist.addEventListener('click',function(e){var b=e.target.closest('.item');if(!b)return;sel=+b.dataset.i;renderList();renderDetail()});
+  ilist.addEventListener('keydown',function(e){
+    if(['ArrowDown','ArrowUp','ArrowRight','ArrowLeft'].indexOf(e.key)<0)return;
+    e.preventDefault();sel=(sel+((e.key==='ArrowDown'||e.key==='ArrowRight')?1:items.length-1))%items.length;renderList();renderDetail();document.getElementById('it'+sel).focus();
+  });
+  idetail.addEventListener('click',function(e){if(!e.target.closest('#doneBtn'))return;done[sel]=true;if(sel<items.length-1)sel++;renderList();renderDetail()});
+  renderList();renderDetail();
+
+  // before / after switches
+  var flows={
+    buddy:{before:[['Every week','Open the updated student list'],['Then','Match 52 students by hand on timezone, language, gender preference and coaching topic'],['Finally','Write and send every email by hand']],
+           after:[['Every week','The script reads the student list and each student’s preferences'],['Special requests','AI helps pair students on timezone, language and gender preferences, and coaching topic'],['Everyone else','Paired automatically, and every student gets an email with their buddy']]},
+    calls:{before:[['After hours','A client calls'],['Then','The call goes to voicemail'],['Next morning','The client is still waiting']],
+           after:[['Any time','An AI receptionist answers'],['If missed','The caller gets a text back'],['Booked','It goes into the calendar with reminders']]}
+  };
+  document.querySelectorAll('.auto').forEach(function(box){
+    var key=box.dataset.auto, ol=box.querySelector('.aflow');
+    function draw(v){
+      ol.className='aflow '+v;
+      ol.innerHTML=flows[key][v].map(function(s){return '<li><b>'+esc(s[0])+'</b>'+esc(s[1])+'</li>'}).join('');
+      box.querySelectorAll('.switch button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.v===v))});
+    }
+    box.querySelector('.switch').addEventListener('click',function(e){var b=e.target.closest('button');if(b)draw(b.dataset.v)});
+    draw('after');
   });
 })();
 </script>
