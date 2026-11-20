@@ -17,9 +17,6 @@
   --text:'Figtree','Segoe UI',system-ui,sans-serif;
   --hand:'Caveat','Segoe Print','Comic Sans MS',cursive;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0c1320; --surface:#141e30; --ink:#e9eef6; --muted:#9ba8bb; --line:#26334a;
-  --brand:#86a8ff; --brand-ink:#0b1220; --hi:#223a63; --hi-ink:#e9eef6; --soft:#1a2842; --shadow:rgba(0,0,0,.45); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0c1320; --surface:#141e30; --ink:#e9eef6; --muted:#9ba8bb; --line:#26334a;
   --brand:#86a8ff; --brand-ink:#0b1220; --hi:#223a63; --hi-ink:#e9eef6; --soft:#1a2842; --shadow:rgba(0,0,0,.45); color-scheme:dark}
@@ -51,7 +48,6 @@ nav a.l:hover{color:var(--brand)}
 .theme .moon{display:none}
 :root[data-theme="dark"] .theme .sun{display:none}
 :root[data-theme="dark"] .theme .moon{display:block}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme .sun{display:none}:root:not([data-theme="light"]) .theme .moon{display:block}}
 
 /* ticker */
 .ticker{background:var(--brand);color:var(--brand-ink);overflow:hidden;border-bottom:2px solid var(--ink);white-space:nowrap}
@@ -459,19 +455,17 @@ footer .hand{font-size:22px;color:var(--hi)}
   var root=document.documentElement, btn=document.getElementById('themeBtn'), label=document.getElementById('themeLabel');
   function current(){
     var t=root.getAttribute('data-theme');
-    if(t) return t;
-    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return t==='dark' ? 'dark' : 'light';
   }
   function show(){ var c=current(); label.textContent = c==='dark' ? 'Dark' : 'Light'; btn.setAttribute('aria-pressed', c==='dark'); }
-  try{ var saved=localStorage.getItem('pl-theme'); if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved); }catch(e){}
+  try{ var saved=localStorage.getItem('pl-theme2'); if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved); }catch(e){}
   show();
   btn.addEventListener('click',function(){
     var next = current()==='dark' ? 'light' : 'dark';
     root.setAttribute('data-theme',next);
-    try{ localStorage.setItem('pl-theme',next); }catch(e){}
+    try{ localStorage.setItem('pl-theme2',next); }catch(e){}
     show();
   });
-  if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',show); }catch(e){} }
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var el=document.getElementById(b.getAttribute('data-copy')), text=el.textContent;
