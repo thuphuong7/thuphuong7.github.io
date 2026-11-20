@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phuong Le | Administrative Assistant</title>
+<meta name="description" content="Phuong Le, Administrative Assistant in Vancouver, BC. Front desk, client records, HubSpot, QuickBooks and workflow automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout: personal-brand poster. Giant name hero with sticker badge and tilted cards, ticker strip, then bold ruled sections. */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --ink:#0f1b2d; --muted:#556072; --line:#dde3ec;
+  --brand:#1f3c88; --brand-ink:#ffffff; --hi:#d6e4f5; --hi-ink:#0f1b2d; --soft:#e8eef7; --shadow:rgba(15,27,45,.16);
+  --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;
+  --text:'Figtree','Segoe UI',system-ui,sans-serif;
+  --hand:'Caveat','Segoe Print','Comic Sans MS',cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1320; --surface:#141e30; --ink:#e9eef6; --muted:#9ba8bb; --line:#26334a;
+  --brand:#86a8ff; --brand-ink:#0b1220; --hi:#223a63; --hi-ink:#e9eef6; --soft:#1a2842; --shadow:rgba(0,0,0,.45); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1320; --surface:#141e30; --ink:#e9eef6; --muted:#9ba8bb; --line:#26334a;
+  --brand:#86a8ff; --brand-ink:#0b1220; --hi:#223a63; --hi-ink:#e9eef6; --soft:#1a2842; --shadow:rgba(0,0,0,.45); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--text);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1}
+.hand{font-family:var(--hand);font-weight:700}
+.eyebrow{font:700 13px/1.2 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);border-bottom:2px solid var(--ink)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;flex-wrap:wrap}
+.brand{font:800 26px/1 var(--display);color:var(--brand);text-decoration:none;letter-spacing:-.02em;display:flex;align-items:baseline;gap:6px}
+.brand small{font:700 20px var(--hand);color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+nav ul{display:flex;gap:18px;list-style:none;margin:0 8px 0 0;padding:0}
+nav a.l{text-decoration:none;font-weight:700;font-size:15px}
+nav a.l:hover{color:var(--brand)}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:99px;padding:9px 16px;font:700 14px var(--text);text-decoration:none;border:2px solid var(--ink);cursor:pointer}
+.pill.brand{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.pill.ghost{background:var(--surface);color:var(--ink)}
+.pill svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.theme .moon{display:none}
+:root[data-theme="dark"] .theme .sun{display:none}
+:root[data-theme="dark"] .theme .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme .sun{display:none}:root:not([data-theme="light"]) .theme .moon{display:block}}
+
+/* ticker */
+.ticker{background:var(--brand);color:var(--brand-ink);overflow:hidden;border-bottom:2px solid var(--ink);white-space:nowrap}
+.ticker .track{display:inline-flex;animation:slide 38s linear infinite;padding-block:10px}
+.ticker span{font:800 15px var(--display);letter-spacing:.04em;text-transform:uppercase;padding:0 18px;display:inline-flex;align-items:center;gap:36px}
+.ticker span::after{content:"\2605";color:var(--hi)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* hero */
+.hero{padding-block:56px 64px;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+.hero>*{min-width:0}
+.hello{font:600 clamp(18px,2vw,22px)/1.3 var(--text);color:var(--brand);margin:0 0 10px}
+.name{font-size:clamp(52px,8.4vw,112px);font-weight:800;letter-spacing:-.045em;line-height:.95;margin-bottom:22px;white-space:nowrap}
+.name .dot{color:var(--brand)}
+.role{font:800 clamp(20px,2.4vw,26px)/1.2 var(--display);margin:0 0 16px;letter-spacing:-.01em}
+.role mark{display:inline-block;margin-top:4px;background:var(--hi);color:var(--hi-ink);padding:0;border-radius:2px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 26px}
+.lead b{color:var(--ink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:54px;min-width:220px;padding:0 22px;line-height:1;white-space:nowrap;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--shadow);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
+.btn.brand{background:var(--brand);color:var(--brand-ink)}
+.btn.hi{background:var(--hi);color:var(--hi-ink)}
+
+.stage{position:relative;padding:20px 10px 30px}
+.photo{position:relative;aspect-ratio:4/5;max-width:100%;border:2px solid var(--ink);border-radius:22px;background:var(--soft);box-shadow:8px 8px 0 var(--shadow);overflow:hidden}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo .mono{font:800 clamp(90px,12vw,150px)/1 var(--display);color:#fff;letter-spacing:-.06em}
+.photo .add{position:absolute;bottom:14px;left:0;right:0;text-align:center;font:600 13px var(--text);color:#fff;opacity:.85}
+.sticker{position:absolute;top:-34px;right:-10px;width:132px;height:132px;border-radius:50%;background:var(--hi);color:var(--hi-ink);border:2px solid var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:4px 4px 0 var(--shadow);z-index:2}
+.sticker b{font:800 15px/1.05 var(--display);text-transform:uppercase}
+.sticker span{font:800 30px/1 var(--display);color:var(--brand)}
+.glance{position:relative;background:var(--surface);border:2px solid var(--ink);border-radius:22px;padding:28px 26px;box-shadow:8px 8px 0 var(--shadow)}
+.glance dl{margin:14px 0 0;display:grid;gap:0}
+.glance dl div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.glance dt{font:700 12px/1.5 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.glance dd{margin:0;font-weight:600;min-width:0}
+.note{position:absolute;right:-6px;bottom:0;background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:10px 16px;box-shadow:4px 4px 0 var(--shadow);max-width:230px;z-index:2}
+.note .hand{font-size:24px;line-height:1.05;display:block;color:var(--brand)}
+.note small{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding-block:72px}
+.band{background:var(--surface);border-block:2px solid var(--ink)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 32px;flex-wrap:wrap;margin-bottom:36px}
+.head h2{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.035em;margin-top:8px}
+.head h2 em{font-style:normal;color:var(--brand)}
+.head p{margin:0;color:var(--muted);max-width:44ch}
+
+/* workflow */
+.flows{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.flow{border:2px solid var(--ink);border-radius:18px;background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
+.flow .ba{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;border-bottom:2px solid var(--ink)}
+.flow .ba div{padding:14px 14px;font-size:14px;line-height:1.35;min-width:0}
+.flow .ba .before{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--brand);text-decoration-thickness:2px}
+.flow .ba .after{background:var(--hi);color:var(--hi-ink);font-weight:700}
+.flow .ba i{display:flex;align-items:center;padding:0 2px;font-style:normal;font:800 22px var(--display);color:var(--brand);background:var(--bg)}
+.flow .ba small{display:block;font:700 11px var(--text);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;text-decoration:none;opacity:.8}
+.flow .body{padding:18px 20px 22px}
+.flow h3{font-size:24px;letter-spacing:-.02em;margin-bottom:8px}
+.flow p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.4)}70%{opacity:1;transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes sweep{to{background-size:100% 100%}}
+.hero .hello{animation:rise .6s ease-out both}
+.hero .name{animation:rise .7s .08s ease-out both}
+.hero .role{animation:rise .6s .2s ease-out both}
+.hero .lead{animation:rise .6s .3s ease-out both}
+.hero .lead+.lead{animation-delay:.38s}
+.hero .cta{animation:rise .6s .46s ease-out both}
+.glance{animation:slideIn .7s .25s ease-out both}
+.glance dl div{animation:rise .5s ease-out both}
+.glance dl div:nth-child(1){animation-delay:.45s}.glance dl div:nth-child(2){animation-delay:.52s}.glance dl div:nth-child(3){animation-delay:.59s}
+.glance dl div:nth-child(4){animation-delay:.66s}.glance dl div:nth-child(5){animation-delay:.73s}.glance dl div:nth-child(6){animation-delay:.8s}
+.sticker{animation:pop .6s .9s ease-out both,float 4s 1.6s ease-in-out infinite}
+.role mark{background:linear-gradient(var(--hi),var(--hi)) no-repeat left/0 100%;animation:sweep .7s 1s ease-out forwards}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in{opacity:1;transform:none}
+.flow,.tile,.skills li,.edu>div{transition:transform .2s,box-shadow .2s,background .2s}
+.flow:hover,.tile:hover,.edu>div:hover{transform:translateY(-4px);box-shadow:0 12px 28px var(--shadow)}
+.flow .ba i{transition:transform .25s}
+.flow:hover .ba i{transform:translateX(5px)}
+.skills li:hover{background:var(--hi);color:var(--hi-ink)}
+.job{transition:background .2s}
+.job:hover{background:var(--soft)}
+nav a.l{position:relative}
+nav a.l::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a.l:hover::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.sticker{animation:pop .6s .9s ease-out both}}
+
+/* story */
+.story{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg)}
+.step{padding:24px;border-left:2px solid var(--ink);min-width:0}
+.step:first-child{border-left:0}
+.step.goal{background:var(--hi);color:var(--hi-ink)}
+.step.goal p{color:var(--hi-ink)}
+.num{font:700 26px var(--hand);color:var(--brand);display:block;margin-bottom:6px}
+.step.goal .num{color:var(--brand)}
+.step h3{font-size:22px;letter-spacing:-.02em;margin-bottom:10px;line-height:1.1}
+.step p{margin:0;color:var(--muted);font-size:15.5px}
+.writing{margin-top:40px}
+.writing-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.writing-head h3{font-size:26px;letter-spacing:-.02em}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.post{display:flex;flex-direction:column;gap:6px;text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:18px;background:var(--bg);transition:transform .15s,box-shadow .15s;min-width:0}
+.post:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--shadow)}
+.post small{font:700 12px var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.post b{font:800 20px/1.15 var(--display);letter-spacing:-.01em}
+.post span{font-size:14.5px;color:var(--muted)}
+
+/* gap year */
+.gap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.gap>*{min-width:0}
+.gap-story p{margin:0 0 16px;color:var(--muted)}
+.gap-story p b{color:var(--ink)}
+.gap-story .hand{font-size:34px;line-height:1.1;color:var(--brand);display:block;margin-top:8px}
+.dates{display:inline-flex;gap:10px;align-items:center;font:800 16px var(--display);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:10px;margin-bottom:18px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tile{border:2px solid var(--ink);border-radius:16px;padding:18px;background:var(--bg);position:relative}
+.tile.wide{grid-column:span 2}
+.tile .ic{width:40px;height:40px;border-radius:12px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.tile .ic svg{width:22px;height:22px;fill:none;stroke:var(--brand);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{font-size:20px;letter-spacing:-.01em;margin-bottom:4px}
+.tile p{margin:0;font-size:14.5px;color:var(--muted)}
+.tile .tag{position:absolute;top:14px;right:14px;font:800 12px var(--display);background:var(--hi);color:var(--hi-ink);border:2px solid var(--ink);border-radius:99px;padding:2px 9px}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.values span{font:800 15px var(--display);border:2px solid var(--ink);border-radius:99px;padding:6px 14px;background:var(--surface)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+.skills h3{font-size:20px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.skills h3::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--brand);flex:none}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+.skills li{font-size:14px;font-weight:600;padding:5px 12px;border-radius:99px;background:var(--soft)}
+
+/* experience */
+.jobs{border-top:2px solid var(--ink)}
+.job{display:grid;grid-template-columns:230px 1fr;gap:28px;padding-block:28px;border-bottom:2px solid var(--line)}
+.job>*{min-width:0}
+.job .when{font:800 15px var(--display);color:var(--brand)}
+.job .when small{display:block;font:500 14px var(--text);color:var(--muted);margin-top:4px}
+.job h3{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-bottom:4px}
+.job .org{font-weight:700;margin-bottom:12px}
+.job ul{margin:0;padding-left:20px;color:var(--muted)}
+.job li{margin-bottom:6px}
+.job li::marker{color:var(--brand)}
+
+.edu{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;margin-top:40px}
+.edu>div{border:2px solid var(--ink);border-radius:18px;padding:22px;background:var(--surface)}
+.edu h3{font-size:22px;margin-block:8px 4px}
+.edu p{margin:0;color:var(--muted)}
+.edu ul{margin:10px 0 0;padding-left:20px}
+.edu li::marker{color:var(--brand)}
+
+/* contact */
+.contact{background:var(--brand);color:var(--brand-ink);border-top:2px solid var(--ink)}
+.contact .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-block:72px}
+.contact .wrap>*{min-width:0}
+.contact h2{font-size:clamp(48px,8vw,104px);font-weight:800;letter-spacing:-.045em;line-height:.9}
+.contact .hand{font-size:30px;display:block;margin-top:14px;color:var(--hi)}
+.card{background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:18px;padding:24px;box-shadow:8px 8px 0 var(--shadow)}
+.card dl{margin:0;display:grid;gap:14px}
+.card dt{font:700 12px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card dd{margin:2px 0 0;font-weight:700;overflow-wrap:anywhere;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copy{font:700 12px var(--text);background:var(--hi);color:var(--hi-ink);border:2px solid var(--ink);border-radius:99px;padding:2px 10px;cursor:pointer}
+footer{background:var(--ink);color:var(--bg);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px}
+footer .hand{font-size:22px;color:var(--hi)}
+
+@media (max-width:900px){
+  nav ul{display:none}
+  .hero,.gap,.contact .wrap,.edu{grid-template-columns:1fr}
+  .flows,.skills,.posts,.story{grid-template-columns:1fr}
+  .step{border-left:0;border-top:2px solid var(--ink)}
+  .step:first-child{border-top:0}
+  .job{grid-template-columns:1fr;gap:8px}
+  .stage{max-width:420px;margin:0 auto;width:100%}
+  .hero{padding-block:36px 48px;gap:36px}
+}
+@media (max-width:520px){
+  .tiles{grid-template-columns:1fr}
+  .tile.wide{grid-column:auto}
+  .sticker{width:108px;height:108px}
+  .sticker span{font-size:24px}
+  .brand small{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav class="pad">
+  <div class="wrap">
+    <a class="brand" href="#top">Phuong Le<small>admin &amp; ops</small></a>
+    <div class="nav-r">
+      <ul>
+        <li><a class="l" href="#workflows">Workflows</a></li>
+        <li><a class="l" href="#experience">Experience</a></li>
+        <li><a class="l" href="#story">My story</a></li>
+        <li><a class="l" href="#gap-year">Beyond work</a></li>
+      </ul>
+      <button class="pill ghost theme" id="themeBtn" type="button" aria-label="Switch between light and dark theme">
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <span id="themeLabel">Light</span>
+      </button>
+      <a class="pill brand" href="#contact">Hire me</a>
+    </div>
+  </div>
+</nav>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Workflow optimizer</span><span>HubSpot CRM</span><span>QuickBooks</span><span>Google Apps Script</span><span>AI tools</span><span>Learning French A2</span><span>Open work permit to March 2029</span>
+    <span>Workflow optimizer</span><span>HubSpot CRM</span><span>QuickBooks</span><span>Google Apps Script</span><span>AI tools</span><span>Learning French A2</span><span>Open work permit to March 2029</span>
+  </div>
+</div>
+
+<main id="top">
+  <div class="pad"><div class="wrap hero">
+    <div>
+      <p class="hello">Hello Hiring Manager, I'm</p>
+      <h1 class="name">Phuong Le</h1>
+      <p class="role">Administrative Assistant who loves to <mark>work smarter, more efficiently</mark>.</p>
+      <p class="lead">Nearly <b>2 years as an Administrative Assistant</b> at Erickson Coaching International in Vancouver. I keep the front desk calm and the records accurate. When a task is slow or repetitive, I build a better way to do it with HubSpot, QuickBooks, Google Apps Script or AI tools.</p>
+      <p class="lead"><b>I'm a quick learner.</b> In three jobs I picked up a new system each time, from Fresha and Jane App to HubSpot and QuickBooks, and was working confidently within weeks. Whatever tools your team uses, I'll learn them fast and use them well.</p>
+      <div class="cta">
+        <a class="btn brand" href="#contact">Let's work together</a>
+        <a class="btn hi" href="#workflows">See what I improved</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="sticker"><b style="font-size:12px">Open work<br>permit to</b><b style="font-size:15px">March</b><span style="font-size:28px">2029</span></div>
+      <div class="glance">
+        <span class="eyebrow">At a glance</span>
+        <dl>
+          <div><dt>Role</dt><dd>Administrative Assistant</dd></div>
+          <div><dt>Experience</dt><dd>~2 years at Erickson Coaching International</dd></div>
+          <div><dt>Strengths</dt><dd>Improving workflows and operations · Learning new tools fast</dd></div>
+          <div><dt>Core tools</dt><dd>HubSpot · QuickBooks · Google Workspace · Apps Script</dd></div>
+          <div><dt>Languages</dt><dd>English C1 · Vietnamese native · French A2</dd></div>
+          <div><dt>Based in</dt><dd>Vancouver, BC · willing to relocate</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div></div>
+
+  <section id="workflows" class="band pad">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">What I like doing most</span><h2>I make work <em>smoother.</em></h2></div>
+        <p>Optimizing operations is my favourite part of the job. Here are two changes I made.</p>
+      </div>
+      <div class="flows">
+        <article class="flow">
+          <div class="ba"><div class="before"><small>Before</small>Matching 52 students by hand every week</div><i>→</i><div class="after"><small>After</small>Pairs and emails sent by a script</div></div>
+          <div class="body"><h3>Buddy-matching automation</h3><p>Wrote a Google Apps Script that assigns weekly buddy pairs and emails each student for a 52-student pilot program.</p></div>
+        </article>
+        <article class="flow">
+          <div class="ba"><div class="before"><small>Before</small>Calls missed after hours</div><i>→</i><div class="after"><small>After</small>24/7 answering and text-back</div></div>
+          <div class="body"><h3>AI receptionist proposal</h3><p>Researched and proposed Ask Benny for 24/7 call answering, missed-call text-back, reminders and calendar integration.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="pad">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Experience</span><h2>Where I worked in <em>Canada</em></h2></div></div>
+      <div class="jobs">
+        <div class="job">
+          <div class="when">Jun 2024 — Apr 2026<small>Vancouver</small></div>
+          <div><h3>Administrative Assistant</h3><div class="org">Erickson Coaching International</div>
+            <ul>
+              <li>First point of contact at reception: answered calls, emails and inquiries and routed each request to the right team member.</li>
+              <li>Researched and proposed an AI phone receptionist (Ask Benny) for 24/7 call answering, missed-call text-back, reminders and calendar integration.</li>
+              <li>Coordinated meeting and event logistics, managed office supplies and equipment, and gave first-line tech support.</li>
+              <li>Kept client records accurate in HubSpot CRM, shared drives and spreadsheets, with organized digital filing.</li>
+              <li>Prepared quotations, processed purchase orders and QuickBooks invoices.</li>
+              <li>Automated weekly buddy-matching assignments and emails with Google Apps Script for a 52-student pilot program.</li>
+            </ul></div>
+        </div>
+        <div class="job">
+          <div class="when">May 2025 — Dec 2025<small>Vancouver · part-time</small></div>
+          <div><h3>Server</h3><div class="org">Pho In Love Restaurant &amp; Bar</div>
+            <ul>
+              <li>Received deliveries, checked items against receipts and kept inventory records up to date.</li>
+              <li>Coordinated orders with kitchen staff in a high-volume restaurant using a POS system, following FOODSAFE and Serving It Right standards.</li>
+            </ul></div>
+        </div>
+        <div class="job">
+          <div class="when">Jul 2023 — Jun 2024<small>Vancouver · part-time</small></div>
+          <div><h3>Front Desk Receptionist</h3><div class="org">Muse Hair &amp; Beauty Salon</div>
+            <ul>
+              <li>Checked in clients, managed bookings in Fresha and Jane App, and answered phone and online inquiries.</li>
+              <li>Created promotional materials and social media content using Adobe Creative Suite and Canva.</li>
+            </ul></div>
+        </div>
+      </div>
+      <div class="edu">
+        <div><span class="eyebrow">Sep 2023 — May 2025</span><h3>Computer Systems Technology Diploma</h3><p>BCIT, Burnaby Campus</p></div>
+        <div><span class="eyebrow">Certificates</span><ul><li>Serving It Right</li><li>FOODSAFE Level 1</li><li>Basic First Aid</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="band pad">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Toolbox</span><h2>Skills <em>&amp;</em> tools</h2></div></div>
+      <div class="skills">
+        <div><h3>Client services</h3><ul><li>Client emails and inquiries</li><li>Client records</li><li>Schedule changes</li><li>Follow-ups</li><li>Customer service</li><li>Confidentiality</li></ul></div>
+        <div><h3>Administration</h3><ul><li>Invoicing and payments</li><li>Scheduling</li><li>Document control</li><li>Data entry</li><li>Google Drive organization</li><li>Vendor coordination</li><li>Supplies and inventory</li></ul></div>
+        <div><h3>Technology</h3><ul><li>Google Workspace</li><li>Microsoft Office</li><li>HubSpot CRM</li><li>QuickBooks</li><li>Google Apps Script</li><li>AI tools</li><li>Canva</li><li>Adobe Creative Suite</li><li>Fresha</li><li>Jane App</li><li>POS systems</li></ul></div>
+        <div><h3>How I work</h3><ul><li>Quick learner</li><li>Eager to learn new skills</li><li>Attention to detail</li><li>Takes initiative</li><li>Multitasking</li><li>Clear communication</li><li>Independent and team work</li><li>Positive attitude</li></ul></div>
+        <div><h3>Languages</h3><ul><li>English · C1</li><li>Vietnamese · native</li><li>French · A2, learning</li></ul></div>
+        <div><h3>Analytical</h3><ul><li>Data analysis</li><li>Problem solving</li><li>Coding basics</li><li>Workflow automation</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Why tech, why admin</span><h2>Learning how a business <em>runs.</em></h2></div>
+      </div>
+      <div class="story">
+        <div class="step">
+          <span class="num">Then</span>
+          <h3>Computer Systems Technology at BCIT</h3>
+          <p>I chose a tech diploma to learn data analysis, problem solving, and how to use code and AI in everyday life. I learned all three, and I use them at work every day.</p>
+        </div>
+        <div class="step">
+          <span class="num">Now</span>
+          <h3>Administrative Assistant</h3>
+          <p>The front desk shows how every part of a business connects: clients, billing, scheduling, records and the team. I use my tech skills to make those parts work better together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gap-year" class="band pad">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Beyond work · May — September 2026</span><h2>My gap months in <em>Viet Nam</em></h2></div>
+      </div>
+      <div class="gap">
+        <div class="gap-story">
+          <p>In May 2026 I went home to Vietnam for personal reasons. I used the time well: I spent time with my family and invested in myself.</p>
+          <p>I studied AI tools to work faster, started French, and built steady habits with yoga and care for my mental health. I came back with new skills, more energy and a clear head.</p>
+          <span class="hand">Always learning, always trying to be a little better.</span>
+          <div class="values"><span>Progressive</span><span>Open-minded</span><span>Always improving</span></div>
+        </div>
+        <div class="tiles">
+          <div class="tile">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+            <h3>Family</h3><p>Time at home in Vietnam with the people who matter most.</p>
+          </div>
+          <div class="tile">
+            <span class="tag">A2</span>
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c-1 4-4 7-7 8"/><path d="M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+            <h3>French</h3><p>Learning French, now at level A2 and still going.</p>
+          </div>
+          <div class="tile wide">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 4.6L19 8.3l-3.5 3.4.8 4.8L12 14.3l-4.3 2.2.8-4.8L5 8.3l4.8-.7z"/></svg></div>
+            <h3>AI skills</h3><p>Learned to use AI tools in daily admin work: drafting emails, summarizing documents, planning schedules and automating repetitive steps.</p>
+          </div>
+          <div class="tile">
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M6 10l6 3 6-3M8 21l4-8 4 8"/></svg></div>
+            <h3>Yoga</h3><p>A regular practice for focus and calm.</p>
+          </div>
+          <div class="tile">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+            <h3>Mental health</h3><p>Rest, reflection and healthy routines I keep using at work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact pad" style="padding-block:0">
+    <div class="wrap">
+      <div>
+        <h2>Let's make your office run smoother.</h2>
+        <span class="hand">Looking forward to hearing from you.</span>
+      </div>
+      <div class="card">
+        <dl>
+          <div><dt>Email</dt><dd><span id="em">thuphuongpy2004@gmail.com</span><button class="copy" type="button" data-copy="em">Copy</button></dd></div>
+          <div><dt>Location</dt><dd>Vancouver, BC · willing to relocate</dd></div>
+          <div><dt>Work status</dt><dd>Open work permit to March 2029</dd></div>
+          <div><dt>Writing</dt><dd><a href="https://medium.com/@lttphuong7" target="_blank" rel="noopener">medium.com/@lttphuong7</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="pad"><div class="wrap"><span>© 2026 Phuong Le</span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), label=document.getElementById('themeLabel');
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t;
+    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function show(){ var c=current(); label.textContent = c==='dark' ? 'Dark' : 'Light'; btn.setAttribute('aria-pressed', c==='dark'); }
+  try{ var saved=localStorage.getItem('pl-theme'); if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved); }catch(e){}
+  show();
+  btn.addEventListener('click',function(){
+    var next = current()==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('pl-theme',next); }catch(e){}
+    show();
+  });
+  if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',show); }catch(e){} }
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy')), text=el.textContent;
+      function selectIt(){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Selected'; }
+      try{ navigator.clipboard.writeText(text).then(function(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy'},1500); }, selectIt); }catch(e){ selectIt(); }
+    });
+  });
+  // scroll reveal: only for elements that start below the fold, so the first screen is always complete
+  try{
+    if(!('IntersectionObserver' in window)) return;
+    var items=document.querySelectorAll('section .head, .flow, .job, .skills>div, .step, .post, .tile, .edu>div, .gap-story, .contact .wrap>*');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    var vh=window.innerHeight||800;
+    items.forEach(function(el){
+      if(el.getBoundingClientRect().top>vh){
+        var sib=el.parentElement?Array.prototype.indexOf.call(el.parentElement.children,el):0;
+        el.style.transitionDelay=Math.min(sib,5)*80+'ms';
+        el.classList.add('reveal'); io.observe(el);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
