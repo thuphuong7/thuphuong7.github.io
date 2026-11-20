@@ -113,15 +113,15 @@ section{padding-block:72px}
 
 /* inbox */
 .inbox{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.3fr);border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg);box-shadow:8px 8px 0 var(--shadow)}
-.ilist{list-style:none;margin:0;padding:10px;border-right:2px solid var(--ink);display:grid;gap:6px;align-content:start}
-.item{width:100%;text-align:left;background:transparent;border:2px solid transparent;border-radius:14px;padding:12px 14px;cursor:pointer;color:var(--ink);font:inherit;display:grid;grid-template-columns:1fr auto;gap:2px 10px;transition:background .15s}
+.ilist{list-style:none;margin:0;padding:20px;border-right:2px solid var(--ink);display:grid;gap:8px;align-content:start}
+.item{width:100%;text-align:left;background:transparent;border:2px solid transparent;border-radius:14px;padding:14px 18px;cursor:pointer;color:var(--ink);font:inherit;display:grid;grid-template-columns:1fr auto;gap:2px 10px;transition:background .15s}
 .item:hover{background:var(--surface)}
 .item[aria-selected="true"]{background:var(--surface);border-color:var(--ink);box-shadow:inset 5px 0 0 var(--brand)}
 .item .from{font:800 16px var(--display);letter-spacing:-.01em}
 .item .when{font-size:13px;color:var(--muted);font-weight:600}
 .item .subj{grid-column:1/-1;font-size:14.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .item.done .from::after{content:"Handled";margin-left:8px;font:700 11px var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
-.idetail{padding:26px 28px 28px;background:var(--surface);min-width:0}
+.idetail{padding:36px 40px 36px;background:var(--surface);min-width:0}
 .idetail .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .itag{font:800 13px var(--display);padding:4px 12px;border-radius:99px;border:2px solid var(--ink);background:var(--bg)}
 .itag.urgent{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
@@ -132,7 +132,7 @@ section{padding-block:72px}
 .isteps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;border:2px solid var(--ink);background:var(--hi);color:var(--hi-ink);display:flex;align-items:center;justify-content:center;font:800 13px var(--display)}
 .itools{display:flex;flex-wrap:wrap;gap:7px;align-items:center;color:var(--muted);font-size:14px;font-weight:600}
 .itools span{font-size:14px;font-weight:600;padding:5px 12px;border-radius:99px;background:var(--soft);color:var(--ink)}
-.idetail .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:2px solid var(--line)}
+.idetail .foot{display:flex;justify-content:flex-end;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:2px solid var(--line)}
 .idetail .foot small{color:var(--muted);font-size:14px;font-weight:600}
 .ienter{animation:ifade .25s ease-out}
 @keyframes ifade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
@@ -154,6 +154,8 @@ section{padding-block:72px}
 .auto .anote{margin:0;color:var(--muted);font-size:15.5px;max-width:72ch}
 @media (max-width:900px){
   .inbox{grid-template-columns:1fr}
+  .idetail{padding:24px 20px}
+  .ilist{padding:12px}
   .ilist{border-right:0;border-bottom:2px solid var(--ink);grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);overflow-x:auto}
   .aflow{grid-template-columns:1fr}
 }
@@ -571,7 +573,7 @@ footer .hand{font-size:22px;color:var(--hi)}
       '<blockquote>“'+esc(it.subj)+'”</blockquote><h3>How I handle it</h3><ol class="isteps">'+
       it.steps.map(function(s){return '<li><span>'+esc(s)+'</span></li>'}).join('')+'</ol>'+
       '<div class="itools">Tools: '+it.tools.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>'+
-      '<div class="foot"><small>Done in: '+esc(it.time)+'</small><button class="btn brand" type="button" id="doneBtn">'+(sel<items.length-1?'Mark handled, next':'Mark handled')+'</button></div></div>';
+      '<div class="foot"><button class="btn brand" type="button" id="doneBtn">'+(sel<items.length-1?'Mark handled, next':'Mark handled')+'</button></div></div>';
     idetail.setAttribute('aria-labelledby','it'+sel);
   }
   ilist.addEventListener('click',function(e){var b=e.target.closest('.item');if(!b)return;sel=+b.dataset.i;renderList();renderDetail()});
