@@ -129,8 +129,6 @@ section{padding-block:72px}
 .glance dl div:nth-child(4){animation-delay:.66s}.glance dl div:nth-child(5){animation-delay:.73s}.glance dl div:nth-child(6){animation-delay:.8s}
 .sticker{animation:pop .6s .9s ease-out both,float 4s 1.6s ease-in-out infinite}
 .role mark{background:linear-gradient(var(--hi),var(--hi)) no-repeat left/0 100%;animation:sweep .7s 1s ease-out forwards}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out}
-.reveal.in{opacity:1;transform:none}
 .flow,.tile,.skills li,.edu>div{transition:transform .2s,box-shadow .2s,background .2s}
 .flow:hover,.tile:hover,.edu>div:hover{transform:translateY(-4px);box-shadow:0 12px 28px var(--shadow)}
 .flow .ba i{transition:transform .25s}
@@ -473,22 +471,6 @@ footer .hand{font-size:22px;color:var(--hi)}
       try{ navigator.clipboard.writeText(text).then(function(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy'},1500); }, selectIt); }catch(e){ selectIt(); }
     });
   });
-  // scroll reveal: only for elements that start below the fold, so the first screen is always complete
-  try{
-    if(!('IntersectionObserver' in window)) return;
-    var items=document.querySelectorAll('section .head, .flow, .job, .skills>div, .step, .post, .tile, .edu>div, .gap-story, .contact .wrap>*');
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-    var vh=window.innerHeight||800;
-    items.forEach(function(el){
-      if(el.getBoundingClientRect().top>vh){
-        var sib=el.parentElement?Array.prototype.indexOf.call(el.parentElement.children,el):0;
-        el.style.transitionDelay=Math.min(sib,5)*80+'ms';
-        el.classList.add('reveal'); io.observe(el);
-      }
-    });
-  }catch(e){}
 })();
 </script>
 </body>
