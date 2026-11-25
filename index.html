@@ -377,12 +377,6 @@ footer .hand{font-size:22px;color:var(--hi)}
           <ol class="aflow after"></ol>
           <p class="anote">I built a Google Apps Script workflow for a 52-student pilot program. Students are paired by timezone, language and gender preferences, and the coaching topic they want to discuss. AI helps with pairs that have special requests, everyone else is matched automatically, and each student gets an email with their buddy.</p>
         </div>
-        <div class="auto" data-auto="calls">
-          <div class="auto-top"><h3>Calls that came in after hours</h3>
-            <div class="switch" role="group" aria-label="Show the process"><button type="button" data-v="before" aria-pressed="false">Before</button><button type="button" data-v="after" aria-pressed="true">With my proposal</button></div></div>
-          <ol class="aflow after"></ol>
-          <p class="anote">I researched and proposed Ask Benny, an AI phone receptionist with 24/7 answering, missed-call text-back, appointment reminders and calendar integration.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -396,7 +390,6 @@ footer .hand{font-size:22px;color:var(--hi)}
           <div><h3>Administrative Assistant</h3><div class="org">Erickson Coaching International</div>
             <ul>
               <li>First point of contact at reception: answered calls, emails and inquiries and routed each request to the right team member.</li>
-              <li>Researched and proposed an AI phone receptionist (Ask Benny) for 24/7 call answering, missed-call text-back, reminders and calendar integration.</li>
               <li>Coordinated meeting and event logistics, managed office supplies and equipment, and gave first-line tech support.</li>
               <li>Kept client records accurate in HubSpot CRM, shared drives and spreadsheets, with organized digital filing.</li>
               <li>Prepared quotations, processed purchase orders and QuickBooks invoices.</li>
@@ -559,7 +552,7 @@ footer .hand{font-size:22px;color:var(--hi)}
      steps:['Look up the invoice and payment status in QuickBooks','Reply with the status and a receipt if it is paid','Update the payment record'],
      tools:['QuickBooks','Gmail'],time:'About 5 minutes'},
     {from:'Voicemail',when:'Last night',subj:'Missed call from a new client after hours',type:'New inquiry',pri:'First thing',
-     steps:['Call back at the start of the day','Log the caller and what they need in HubSpot','Route them to the right team member','This is why I proposed an AI receptionist (see below)'],
+     steps:['Call back at the start of the day','Log the caller and what they need in HubSpot','Route them to the right team member'],
      tools:['Phone','HubSpot'],time:'By 9:00'},
     {from:'Office',when:'2:30 pm',subj:"We're almost out of printer paper and toner",type:'Supplies',pri:'This week',
      steps:['Check stock in the inventory sheet','Order from our vendor and note the delivery date','Update the inventory sheet when it arrives'],
@@ -592,9 +585,7 @@ footer .hand{font-size:22px;color:var(--hi)}
   // before / after switches
   var flows={
     buddy:{before:[['Every week','Open the updated student list'],['Then','Match 52 students by hand on timezone, language, gender preference and coaching topic'],['Finally','Send each student their buddy with a Word Mail Merge email']],
-           after:[['Every week','The script reads the student list and each student’s preferences'],['Special requests','AI helps pair students on timezone, language and gender preferences, and coaching topic'],['Everyone else','Paired automatically, and every student gets an email with their buddy']]},
-    calls:{before:[['After hours','A client calls'],['Then','The call goes to voicemail'],['Next morning','The client is still waiting']],
-           after:[['Any time','An AI receptionist answers'],['If missed','The caller gets a text back'],['Booked','It goes into the calendar with reminders']]}
+           after:[['Every week','The script reads the student list and each student’s preferences'],['Special requests','AI helps pair students on timezone, language and gender preferences, and coaching topic'],['Everyone else','Paired automatically, and every student gets an email with their buddy']]}
   };
   document.querySelectorAll('.auto').forEach(function(box){
     var key=box.dataset.auto, ol=box.querySelector('.aflow');
