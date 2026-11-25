@@ -153,11 +153,15 @@ section{padding-block:72px}
 .aflow.after li b{color:var(--hi-ink);opacity:.75}
 .auto .anote{margin:0;color:var(--muted);font-size:15.5px;max-width:72ch}
 @media (max-width:900px){
-  .inbox{grid-template-columns:1fr}
+  .inbox{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
   .idetail{padding:24px 20px}
-  .ilist{padding:12px}
-  .ilist{border-right:0;border-bottom:2px solid var(--ink);grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);overflow-x:auto}
+  .ilist{padding:12px;max-height:560px;overflow-y:auto}
   .aflow{grid-template-columns:1fr}
+}
+
+@media (max-width:600px){
+  .inbox{grid-template-columns:1fr}
+  .ilist{border-right:0;border-bottom:2px solid var(--ink);max-height:300px}
 }
 
 /* motion */
